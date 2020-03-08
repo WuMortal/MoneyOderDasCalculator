@@ -23,7 +23,7 @@ export class AppComponent {
     this.list.reverse();
   }
 
-  private save(money: number) {
+  save(money: number) {
     if (!money || money <= 0) {
       alert('输入的金额必须大于 0 元。');
       return;
@@ -57,15 +57,15 @@ export class AppComponent {
     location.reload();
   }
 
-  private load(amount: number) {
+  load(amount: number) {
     this.money = amount;
   }
 
-  private showRecord() {
+  showRecord() {
     this.isLock = !this.checkPassword();
   }
 
-  private cleanData() {
+  cleanData() {
     const checkResult = this.checkPassword();
     console.log(checkResult);
     if (!checkResult) {
