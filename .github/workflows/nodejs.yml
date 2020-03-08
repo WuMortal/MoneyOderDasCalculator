@@ -18,14 +18,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Build
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g @angular/cli
     - run: npm ci
     - run: ng build --prod --output-path docs --base-href /MoneyOderDasCalculator/
-    - run: cd /home/runner/work/MoneyOderDasCalculator/MoneyOderDasCalculator/docs/
+      
+    - uses: JamesIves/github-pages-deploy-action
+    - name: Deploy
+    - run: cd docs/
     - run: git init
     - run: git config user.name "WuMortal"
     - run: git config user.email "1170621609@qq.com"
