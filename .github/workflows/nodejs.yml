@@ -31,7 +31,7 @@ jobs:
     - run: git config user.email "1170621609@qq.com"
     - run: git add .
     - run: git commit -m "push"
-    - run: git push --force --quiet "https://${{ secrets.PUSH_TOKEN }}@${{ secrets.MoneyOderDasCalculator_ADDRESS }}" gh-pages
+    - run: git push --force --quiet "https://${{ secrets.PUSH_TOKEN }}@${{ secrets.MoneyOderDasCalculator_ADDRESS }}" gh-pages:gh-pages
       env:
         CI: true
         
