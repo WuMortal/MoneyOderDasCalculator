@@ -26,8 +26,8 @@ jobs:
     - run: npm ci
     - run: ng build --prod --output-path docs --base-href /MoneyOderDasCalculator/
       
-    - uses: JamesIves/github-pages-deploy-action
     - name: Deploy
+      uses: JamesIves/github-pages-deploy-action
     - run: cd docs/
     - run: git init
     - run: git config user.name "WuMortal"
