@@ -27,7 +27,7 @@ jobs:
     - run: ng build --prod --output-path docs --base-href /MoneyOderDasCalculator/
     - run: cd docs/
     - run: ls
-    - run: cd docs/
+    - run: cd /docs
     - run: ls
     - run: git init
     - run: git config user.name "WuMortal"
