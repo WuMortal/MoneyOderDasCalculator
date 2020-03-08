@@ -6,8 +6,6 @@ name: Node.js CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
@@ -33,7 +31,7 @@ jobs:
     - run: git config user.email "1170621609@qq.com"
     - run: git add .
     - run: git commit -m "push"
-    - run: git push --force --quiet gh-pages
+    - run: git push --force --quiet "https://${{PUSH_TOKEN}}@git@github.com:WuMortal/MoneyOderDasCalculator.git" master:gh-pages
       env:
         CI: true
         
