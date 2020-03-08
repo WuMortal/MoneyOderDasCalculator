@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [10.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -22,11 +22,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm install -g @angular/cli
     - run: npm ci
-    - run: git clone https://github.com/WuMortal/MoneyOderDasCalculator.git
     - run: ng build --prod --output-path docs --base-href /MoneyOderDasCalculator/
+    - run: cd docs/
+    - run: git init
+    - run: git config user.name "WuMortal"
+    - run: git config user.email "1170621609@qq.com"
+    - run: git add .
+    - run: git commit -m "push"
+    - run: git push --force --quiet "https://${{ secrets.PUSH_TOKEN }}@${{ secrets.MoneyOderDasCalculator_ADDRESS }}" master:gh-pages
       env:
         CI: true
-  		
-      
-      
+        
