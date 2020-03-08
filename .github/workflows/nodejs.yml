@@ -24,19 +24,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g @angular/cli
     - run: npm ci
-    - run: ls
     - run: ng build --prod --output-path docs --base-href /MoneyOderDasCalculator/
-    - run: cd docs/
-    - run: ls
-    - run: cd docs/
-    - run: ls
-    - run: git init
-    - run: git config user.name "WuMortal"
-    - run: git config user.email "1170621609@qq.com"
-    - run: git add .
-    - run: git status
+    - run: git add ./docs/
     - run: git commit -m "push"
-    - run: git push --force --quiet "https://${{ secrets.PUSH_TOKEN }}@${{ secrets.MoneyOderDasCalculator_ADDRESS }}" master:gh-pages
+    - run: git push  --force --quiet "https://${{ secrets.PUSH_TOKEN }}@${{ secrets.MoneyOderDasCalculator_ADDRESS }}" master:gh-pages
       env:
         CI: true
         
