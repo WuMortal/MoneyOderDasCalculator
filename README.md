@@ -1,2 +1,5 @@
 # MoneyOderDasCalculator
-使用 Angular 实现，纯前端 ...
+
+this is web project，Developed with Angular.
+
+'Money oder das' Calculator
