@@ -24,8 +24,20 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm install -g @angular/cli
     - run: npm ci
     - run: ng build --prod --output-path docs --base-href /MoneyOderDasCalculator/
-    - run: npm test
       env:
         CI: true
+        
+  deploy:
+    runs-on: [ubuntu-latest]
+    needs: build
+    steps:
+      - run: git init
+      - run: git config user.name "WuMortal"
+      - run: git config user.email "1170621609@qq.com"
+      - run: git add .
+      - run: git commit -m "push"
+      - run: cd docs/
+      - run: git push --force --quiet gh-pages
