@@ -1,48 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
-  <h3 class="heard">
-    「小狗钱钱」计算器：
-  </h3>
-  <a href="https://wigor.club/2019/09/01/Money-oder-das/">查看该规则详细介绍</a>
-
-
-
-  <form class="form-inline">
-    <div class="form-group">
-      <input #moeny (keyup)="0" type="number" value="{{money}}" class="form-control" id="money"
-        placeholder="请输入除去「生活费用」剩余的金额" />
-    </div>
-  </form>
-  <div>
-    <ul class="list-group">
-      <li class="list-group-item">零花钱：{{moeny.value*0.1}} 元</li>
-      <li class="list-group-item list-group-item-primary">梦想储备金：{{moeny.value*0.4}} 元</li>
-      <li class="list-group-item list-group-item-secondary">余额宝/银行 存放金额：{{moeny.value*0.2}} 元</li>
-      <li class="list-group-item list-group-item-success">基金投入金额：{{moeny.value*0.3}} 元</li>
-    </ul>
-  </div>
-  <button type="button" class="btn btn-primary btn-lg btn-block save" (click)="save(moeny.value)">保存记录</button>
-  <p class="text-danger">*清除「浏览器数据」可能会导致记录丢失。</p>
-
-
-  <hr />
-
-  <div [hidden]="!list" class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-    <div class="btn-group mr-2" role="group" aria-label="First group">
-      <button type="button" class="btn btn-success" (click)="showRecord()">查看保存记录</button>
-    </div>
-    <div class="btn-group mr-2" role="group" aria-label="Second group">
-      <button type="button" class="btn btn-danger" (click)="cleanData()">清空记录</button>
-    </div>
-  </div>
-
-  <div class="record" [hidden]="!list || isLock">
-    <ul class="list-group">
-      <li class="list-group-item" (click)="load(item.amount)" *ngFor="let item of list"><span>金额：{{item.amount}}
-          元</span> <span class="pull-right">时间：{{item.dateTime}}</span>
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="javaScript:void(0)">Financial Tools</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/oderDas']">小狗钱钱计算器</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/position']">仓位计算器</a>
       </li>
     </ul>
   </div>
+</nav>
+<div class="container">
+<router-outlet></router-outlet>
 </div>
 
 

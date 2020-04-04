@@ -1,0 +1,24 @@
+<h3 class="heard">
+  「仓位」计算器：
+</h3>
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <div class="form-row">
+    <div class="col">
+      <input type="number" class="form-control" formControlName="holdingShare" placeholder="请输入您的「持有份额」">
+    </div>
+    <div class="col">
+      <input type="number" class="form-control" formControlName="holdingCost" placeholder="请输入您的「持仓成本」">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col">
+      <input type="number" class="form-control" formControlName="latestNetWorth" placeholder="请输入「最新净值」">
+    </div>
+    <div class="col">
+      <input type="number" class="form-control" formControlName="expectCost" placeholder="您的期望的「成本」">
+    </div>
+  </div>
+  <p style="margin-top: 15px;">需要增加的投资金额：<span class="text-danger" >{{increase}}</span> 元，才能达到期望的成本。</p>
+  <button type="submit" class="btn btn-primary btn-lg btn-block calc" >计 算</button>
+  <button type="button" class="btn btn-success btn-lg btn-block calc" (click)="onReset()" >重 置</button>
+</form>

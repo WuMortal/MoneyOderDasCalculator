@@ -1,0 +1,30 @@
+.save{
+    margin-top: 10px;
+}
+
+.form-group{
+    width: 100%;
+}
+
+#money{
+    width: 100%;
+}
+
+.record{
+    margin-top: 15px;
+}
+
+.record ul li{
+    color: #007bff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.pull-right{
+    float: right;;
+}
+
+.heard{
+    margin-top: 15px;
+    text-align: center;
+}
