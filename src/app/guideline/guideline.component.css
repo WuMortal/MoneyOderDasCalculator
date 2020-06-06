@@ -1,0 +1,30 @@
+.header {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.saying {
+    margin: 5px;
+}
+
+.saying span {
+    color: #007bff;
+}
+
+div {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.guideline-image {
+    height: 500px;
+    width: auto;
+}
+
+.remark {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 8px;
+    color: #8590a6;
+}
